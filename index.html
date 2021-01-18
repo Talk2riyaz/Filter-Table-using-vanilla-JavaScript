@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center p-4">My Frinds</h2>
+
+      <input
+        type="text"
+        name=""
+        id="myInput"
+        placeholder="Names"
+        onkeyup="searchFun()"
+      />
+
+      <table id="myTable">
+        <thead>
+          <tr class="header">
+            <th style="width:40%;">Name</th>
+            <th style="width:40%;">Degree</th>
+            <th style="width:40%;">Profession</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rahul</td>
+            <td>B-Tech</td>
+            <td>Node.js developer</td>
+          </tr>
+
+          <tr>
+            <td>Kunal</td>
+            <td>BSC</td>
+            <td>React Native developer</td>
+          </tr>
+
+          <tr>
+            <td>Riyaz</td>
+            <td>BCA</td>
+            <td>React.js developer</td>
+          </tr>
+
+          <tr>
+            <td>Anil</td>
+            <td>B-Tech</td>
+            <td>Backend developer</td>
+          </tr>
+
+          <tr>
+            <td>Sohel</td>
+            <td>B-Tech</td>
+            <td>Mern stack developer</td>
+          </tr>
+
+          <tr>
+            <td>Ubed</td>
+            <td>BCA</td>
+            <td>Full stack developer</td>
+          </tr>
+
+          <tr>
+            <td>Amir</td>
+            <td>B-Tech</td>
+            <td>AWS</td>
+          </tr>
+
+          <tr>
+            <td>Harish</td>
+            <td>BE</td>
+            <td>Project Manager</td>
+          </tr>
+
+          <tr>
+            <td>Ganesh</td>
+            <td>BCA</td>
+            <td>Team Lead</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <!-- ********* JavaScript ********* -->
+
+    <script>
+      const searchFun = () => {
+        let filter = document.getElementById("myInput").value.toUpperCase();
+
+        let myTable = document.getElementById("myTable");
+
+        let tr = myTable.getElementsByTagName("tr");
+
+        for (var i = 0; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName('td')[0];
+
+          if(td) {
+            let textvalue = td.textContent || td.innerHTML;
+
+            if(textvalue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display="";
+            }
+
+            else 
+            
+            {
+                tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
